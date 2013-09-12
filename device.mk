@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-## (2) Also get non-open-source specific aspects if available
+## Get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/skyrocket/skyrocket-vendor.mk)
 
 ## overlays
@@ -22,7 +22,11 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/skyrocket/overlay
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/samsung/skyrocket/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/samsung/skyrocket/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc
+
+# TWRP fstab
+PRODUCT_COPY_FILES += \
+    device/samsung/skyrocket/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # BT firmware
 PRODUCT_COPY_FILES += \
